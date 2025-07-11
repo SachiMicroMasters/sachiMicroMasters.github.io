@@ -10,23 +10,21 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: white;
       color: #222;
-      scroll-behavior: smooth;
     }
 
-    /* Top Bar */
     .top-bar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       background-color: #000;
       color: white;
-      padding: 10px 30px;
+      padding: 10px 40px;
       flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: relative;
+      z-index: 2;
     }
 
+    /* Gradient boundary below black ribbon */
     .top-bar::after {
       content: "";
       position: absolute;
@@ -39,69 +37,48 @@
     }
 
     .logo-container {
-      display: flex;
-      align-items: center;
+      flex: 0 0 auto;
     }
 
     .logo {
-      height: 140px;
+      height: 140px; /* increased size */
       width: auto;
-      margin-right: 20px;
+      margin-right: 30px;
       object-fit: contain;
     }
 
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
     .info h1 {
-      font-size: 4em;
+      font-size: 3em;
       margin: 0;
-      background: linear-gradient(to right, #b8860b, #daa520, #ffd700);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 900;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+      color: #ffd700;
     }
 
     .info h2 {
-      font-size: 1.6em;
+      font-size: 1.4em;
       font-weight: normal;
-      margin: 5px 0;
+      margin: 10px 0;
       color: #ccc;
     }
 
     .info p {
-      margin: 5px 0;
+      margin: 2px 0;
       font-size: 1em;
       color: #ccc;
     }
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: #ccc;
-      font-weight: bold;
-      font-size: 1em;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover {
-      color: #ffd700;
-      text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.5);
-    }
-
-    /* Coming Soon */
     .main {
-      height: 60vh;
+      height: calc(100vh - 160px);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 20px;
-      background-image: url('bg.jpg');
+      background-image: url('bg.jpg'); /* or bg.jpeg */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -126,36 +103,6 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* Sections */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2.5em;
-      color: #b8860b;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      text-align: center;
-    }
-
-    section p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    .footer {
-      background: #000;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-
     @media (max-width: 768px) {
       .top-bar {
         flex-direction: column;
@@ -164,116 +111,44 @@
       }
 
       .logo-container {
-        flex-direction: column;
+        margin-bottom: 10px;
       }
 
       .logo {
         height: 100px;
-        margin: 0 0 10px 0;
+        margin-right: 0;
       }
 
       .info h1 {
-        font-size: 2.6em;
+        font-size: 2.2em;
       }
 
       .info h2 {
         font-size: 1.2em;
       }
 
-      .navbar {
-        justify-content: center;
-        gap: 15px;
-        margin-top: 10px;
-      }
-
       .scrolling-text {
         font-size: 1.4em;
-      }
-
-      .info p {
-        font-size: 0.95em;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <div class="top-bar">
     <div class="logo-container">
       <img src="logo.jpeg" alt="Sachi µ Masters Logo" class="logo" />
-      <div class="info">
-        <h1>Sachi µ Masters</h1>
-        <h2>Embedded Systems & Machine Learning</h2>
-        <p>📧 sachimicromasters@gmail.com         📞 +91-8985872909</p>
-      </div>
     </div>
-
-    <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#courses">Courses</a>
-      <a href="#contact">Contact</a>
-      <a href="https://github.com/SachiMicroMasters" target="_blank">GitHub</a>
-    </nav>
+    <div class="info">
+      <h1>Sachi µ Masters</h1>
+      <h2>Embedded Systems & Machine Learning</h2>
+      <p>📧 sachimicromasters@gmail.com</p>
+      <p>📞 +91-8985872909</p>
+    </div>
   </div>
 
-  <!-- Coming Soon Banner -->
   <div class="main">
     <div class="scrolling-text">🚀 Coming Soon... Stay Tuned! 🚀</div>
-  </div>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      Sachi µ Masters is a passionate initiative dedicated to empowering students and professionals in the fields of Embedded Systems and Machine Learning. Our mission is to bridge the gap between academic knowledge and industry applications with hands-on, real-world training.
-    </p>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>
-      Embedded Systems Design and Development  
-      Microcontroller Programming (AVR ATMEGA 328 & 2560, ARM-7 LPC2148, STM32F103 / 303 / 407, NODEMCU8266 / ESP32, Raspberry pi & PICO  etc.)  
-      IoT Solutions and Prototyping  
-      Machine Learning & AI Fundamentals  
-      Data Science and Analytics Training  
-    </p>
-  </section>
-
-  <!-- Courses Section -->
-  <section id="courses">
-    <h2>Courses</h2>
-    <p>
-      🎓 Upcoming offerings include:  
-      • Embedded C with ATmega 328 & 2560  
-      • Real-time IoT Projects using ESP32 & NODEMCU  
-      • ML with Python, NumPy, Pandas, Matplotlib, Seaborn,   
-      • Computer Vision using OpenCV, Tensor flow, keras  
-      • Power BI & Excel for Data Insights  
-      <br /><br />
-      Stay tuned for course launch announcements!
-    </p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>
-      ✉️ Email: sachimicromasters@gmail.com<br />
-      📞 Phone: +91-8985872909<br />
-      📍 Location: Godavarikhani | Mancherial | Karim Nagar
-      Telangana - India<br />
-      Follow us on GitHub and stay connected for updates and registration info.
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <div class="footer">
-    &copy; 2025 Sachi µ Masters. All rights reserved. | Designed by Sadan Asampally
   </div>
 
 </body>

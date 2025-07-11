@@ -15,12 +15,13 @@
 
     .top-bar {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       background-color: #000;
       color: white;
-      padding: 10px 30px;
-      flex-wrap: wrap;
+      padding: 20px;
+      text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -40,12 +41,14 @@
     .logo-container {
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .logo {
       height: 140px;
       width: auto;
-      margin-right: 20px;
       object-fit: contain;
     }
 
@@ -61,67 +64,21 @@
 
     .info h2 {
       font-size: 1.6em;
-      font-weight: normal;
-      margin: 5px 0;
       color: #ccc;
+      margin: 5px 0;
     }
 
     .info p {
+      font-size: 1em;
+      color: #ccc;
       margin: 5px 0;
-      font-size: 1em;
-      color: #ccc;
     }
 
-    .navbar {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: #ccc;
-      font-weight: bold;
-      font-size: 1em;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a:hover {
+    .sloka {
       color: #ffd700;
-      text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.5);
-    }
-
-    .main {
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      background-image: url('bg.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 1;
-    }
-
-    .scrolling-text {
-      font-size: 2em;
-      font-weight: bold;
-      color: #ffd700;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: scroll 10s linear infinite;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      font-size: 1.2em;
+      margin-top: 10px;
+      font-style: italic;
     }
 
     .grid-wrapper {
@@ -172,6 +129,14 @@
       .grid-wrapper {
         grid-template-columns: 1fr;
       }
+
+      .logo {
+        height: 100px;
+      }
+
+      .info h1 {
+        font-size: 2.6em;
+      }
     }
   </style>
 </head>
@@ -185,18 +150,13 @@
         <p>📧 sachimicromasters@gmail.com  📞 +91-8985872909</p>
       </div>
     </div>
-    <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#courses">Courses</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="sloka">
+      తస్మాత్ అసక్తః సతతం కార్యం కర్మ సమాచర। అసక్తో హి ఆచరన్ కర్మ పరమాప్నోతి పూరుషః॥
+    </div>
   </div>
 
-
   <div class="grid-wrapper">
-  <div class="section-box" id="about">
+    <div class="section-box" id="about">
       <h2>About Us</h2>
       <p>
         <strong>Sachi µ Masters</strong> is a passionate initiative dedicated to empowering students and professionals in the fields of Embedded Systems and Machine Learning. Our mission is to bridge the gap between academic knowledge and industry applications with hands-on, real-world training.
@@ -204,7 +164,7 @@
         In metro cities, students have easier access to new technologies through institutes and awareness programs. But rural and suburban college students often lack these opportunities during their degree time. <strong>Sachi µ Masters brings</strong> industry-level training right to their doorstep — enabling them to learn while they study and stay ahead in job placements.
       </p>
     </div>
-    
+
     <div class="section-box" id="services">
       <h2>Our Services</h2>
       <p>
@@ -234,20 +194,18 @@
       </p>
     </div>
 
-    
-
     <div class="section-box" id="courses">
       <h2>Courses</h2>
       <p>
-       <strong>Course Tracks:</strong><br />
-        1. <strong></strong>Embedded Genesis</strong> – Basic Level for Diploma / Engineering / B.Sc / M.Sc (Electronics)<br />
+        <strong>Course Tracks:</strong><br />
+        1. <strong>Embedded Genesis</strong> – Basic Level for Diploma / Engineering / B.Sc / M.Sc (Electronics)<br />
         2. <strong>Embedded Mastery</strong> – Intermediate Level for students who completed Basic Level<br />
         3. <strong>Neural Edge Innovator</strong> – Advanced Level for students with prior levels<br />
         4. <strong>Skill Bridge</strong> – Special course tailored for B.A / B.Com / PG students
       </p>
     </div>
 
-   
+    <div class="section-box" id="contact">
       <h2>Contact Us</h2>
       <p>
         ✉️ Email: sachimicromasters@gmail.com<br />

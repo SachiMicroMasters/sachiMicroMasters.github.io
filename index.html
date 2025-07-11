@@ -20,6 +20,20 @@
       color: white;
       padding: 10px 40px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Gradient boundary below black ribbon */
+    .top-bar::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+      z-index: -1;
     }
 
     .logo-container {
@@ -27,7 +41,7 @@
     }
 
     .logo {
-      height: 120px;
+      height: 140px; /* increased size */
       width: auto;
       margin-right: 30px;
       object-fit: contain;
@@ -58,17 +72,18 @@
     }
 
     .main {
-      height: calc(100vh - 150px);
+      height: calc(100vh - 160px);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 20px;
-      background-image: url('BG.jpg'); /* change to bg.jpeg if needed */
+      background-image: url('BG.jpg'); /* or bg.jpeg */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       position: relative;
+      z-index: 1;
     }
 
     .scrolling-text {
@@ -100,7 +115,7 @@
       }
 
       .logo {
-        height: 90px;
+        height: 100px;
         margin-right: 0;
       }
 
@@ -127,8 +142,8 @@
     <div class="info">
       <h1>Sachi µ Masters</h1>
       <h2>Embedded Systems & Machine Learning</h2>
-      <p>📧 sachimicromasters@gmail.com    📞 +91-8985872909  </p>
-      
+      <p>📧 sachimicromasters@gmail.com</p>
+      <p>📞 +91-8985872909</p>
     </div>
   </div>
 

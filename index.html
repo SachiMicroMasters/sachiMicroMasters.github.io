@@ -8,18 +8,18 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: white;
+      background-color: #f9f9f9;
       color: #222;
       scroll-behavior: smooth;
     }
 
     .top-bar {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       background-color: #000;
       color: white;
-      padding: 10px 30px;
+      padding: 15px 30px;
       flex-wrap: wrap;
       position: sticky;
       top: 0;
@@ -40,17 +40,18 @@
     .logo-container {
       display: flex;
       align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .logo {
-      height: 140px;
+      height: 130px;
       width: auto;
-      margin-right: 20px;
       object-fit: contain;
     }
 
     .info h1 {
-      font-size: 4em;
+      font-size: 3.5em;
       margin: 0;
       background: linear-gradient(to right, #b8860b, #daa520, #ffd700);
       -webkit-background-clip: text;
@@ -60,57 +61,28 @@
     }
 
     .info h2 {
-      font-size: 1.6em;
-      font-weight: normal;
+      font-size: 1.4em;
       margin: 5px 0;
       color: #ccc;
     }
 
     .info p {
-      margin: 5px 0;
       font-size: 1em;
+      margin: 5px 0;
       color: #ccc;
     }
 
     .quote-box {
       max-width: 360px;
-      text-align: right;
       font-size: 1.1em;
       color: #ffd700;
       font-style: italic;
-      padding-left: 20px;
-    }
-
-    .main {
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      background-image: url('bg.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      z-index: 1;
-    }
-
-    .scrolling-text {
-      font-size: 2em;
-      font-weight: bold;
-      color: #ffd700;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: scroll 10s linear infinite;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 10px 20px;
+      text-align: right;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-left: 4px solid #ffd700;
+      padding: 15px 20px;
       border-radius: 10px;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      margin-top: 10px;
     }
 
     .grid-wrapper {
@@ -123,30 +95,33 @@
     }
 
     .section-box {
-      background-color: #fdfdfd;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      text-align: justify;
-      transition: transform 0.3s ease;
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 35px 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e0e0e0;
     }
 
     .section-box:hover {
-      transform: scale(1.01);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     }
 
     .section-box h2 {
-      font-size: 2em;
+      font-size: 2.2em;
       color: #b8860b;
-      margin-bottom: 15px;
       text-align: center;
+      margin-bottom: 20px;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .section-box p {
       font-size: 1.1em;
       line-height: 1.8;
       color: #333;
+      text-align: justify;
     }
 
     .footer {
@@ -154,7 +129,7 @@
       color: #ccc;
       text-align: center;
       padding: 20px;
-      font-size: 0.9em;
+      font-size: 0.95em;
     }
 
     @media (max-width: 768px) {
@@ -164,7 +139,9 @@
 
       .quote-box {
         text-align: center;
-        margin-top: 20px;
+        margin: 20px 0 0 0;
+        border-left: none;
+        border-top: 4px solid #ffd700;
       }
 
       .logo {
@@ -194,11 +171,6 @@
       అసక్తో హి ఆచరన్ కర్మ పరమాప్నోతి పూరుషః॥
     </div>
   </div>
-
-  <!-- Main Banner 
-  <div class="main">
-    <div class="scrolling-text">🚀 Coming Soon... Stay Tuned! 🚀</div>
-  </div>  -->
 
   <!-- Content Sections -->
   <div class="grid-wrapper">
@@ -262,6 +234,7 @@
 
   </div>
 
+  <!-- Footer -->
   <div class="footer">
     &copy; 2025 Sachi µ Masters. All rights reserved. | Designed by Sadan Asampally
   </div>

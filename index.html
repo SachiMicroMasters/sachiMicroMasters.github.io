@@ -10,21 +10,22 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: white;
       color: #222;
+      scroll-behavior: smooth;
     }
 
     .top-bar {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
       background-color: #000;
       color: white;
-      padding: 10px 40px;
+      padding: 10px 30px;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 2;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    /* Gradient boundary below black ribbon */
     .top-bar::after {
       content: "";
       position: absolute;
@@ -37,48 +38,68 @@
     }
 
     .logo-container {
-      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
     }
 
     .logo {
-      height: 140px; /* increased size */
+      height: 140px;
       width: auto;
-      margin-right: 30px;
+      margin-right: 20px;
       object-fit: contain;
     }
 
-    .info {
-      flex: 1;
-      min-width: 250px;
-    }
-
     .info h1 {
-      font-size: 3em;
+      font-size: 4em;
       margin: 0;
-      color: #ffd700;
+      background: linear-gradient(to right, #b8860b, #daa520, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
     }
 
     .info h2 {
-      font-size: 1.4em;
+      font-size: 1.6em;
       font-weight: normal;
-      margin: 10px 0;
+      margin: 5px 0;
       color: #ccc;
     }
 
     .info p {
-      margin: 2px 0;
+      margin: 5px 0;
       font-size: 1em;
       color: #ccc;
     }
 
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: bold;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #ffd700;
+      text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.5);
+    }
+
     .main {
-      height: calc(100vh - 160px);
+      height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 20px;
-      background-image: url('bg.jpg'); /* or bg.jpeg */
+      background-image: url('bg.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -103,6 +124,48 @@
       100% { transform: translateX(-100%); }
     }
 
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-box {
+      background-color: #fdfdfd;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+      transition: transform 0.3s ease;
+    }
+
+    .section-box:hover {
+      transform: scale(1.01);
+    }
+
+    section h2 {
+      font-size: 2.3em;
+      color: #b8860b;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    section p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .footer {
+      background: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
     @media (max-width: 768px) {
       .top-bar {
         flex-direction: column;
@@ -111,44 +174,125 @@
       }
 
       .logo-container {
-        margin-bottom: 10px;
+        flex-direction: column;
       }
 
       .logo {
         height: 100px;
-        margin-right: 0;
+        margin: 0 0 10px 0;
       }
 
       .info h1 {
-        font-size: 2.2em;
+        font-size: 2.6em;
       }
 
       .info h2 {
         font-size: 1.2em;
       }
 
+      .navbar {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
       .scrolling-text {
         font-size: 1.4em;
+      }
+
+      .info p {
+        font-size: 0.95em;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <div class="top-bar">
     <div class="logo-container">
       <img src="logo.jpeg" alt="Sachi µ Masters Logo" class="logo" />
+      <div class="info">
+        <h1>Sachi µ Masters</h1>
+        <h2>Embedded Systems & Machine Learning</h2>
+        <p>📧 sachimicromasters@gmail.com  📞 +91-8985872909</p>
+      </div>
     </div>
-    <div class="info">
-      <h1>Sachi µ Masters</h1>
-      <h2>Embedded Systems & Machine Learning</h2>
-      <p>📧 sachimicromasters@gmail.com</p>
-      <p>📞 +91-8985872909</p>
-    </div>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#courses">Courses</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/SachiMicroMasters" target="_blank">GitHub</a>
+    </nav>
   </div>
 
+  <!-- Coming Soon Banner -->
   <div class="main">
     <div class="scrolling-text">🚀 Coming Soon... Stay Tuned! 🚀</div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-box">
+      <h2>About Us</h2>
+      <p>
+        Sachi µ Masters is a passionate initiative dedicated to empowering students and professionals in the fields of Embedded Systems and Machine Learning. Our mission is to bridge the gap between academic knowledge and industry applications with hands-on, real-world training.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-box">
+      <h2>Our Services</h2>
+      <p>
+        We offer a wide range of services including:
+        <br /><br />
+        • Embedded Systems Design and Development<br />
+        • Microcontroller Programming (AVR ATMEGA 328 & 2560, ARM LPC2148, STM32, ESP32, NodeMCU)<br />
+        • IoT Product Development and Prototyping<br />
+        • Machine Learning & AI Training<br />
+        • Data Science Tools and Visualization using Python, Excel & Power BI
+      </p>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses">
+    <div class="section-box">
+      <h2>Courses</h2>
+      <p>
+        🎓 Upcoming offerings include:
+        <br /><br />
+        • Embedded C with ATmega 328 & 2560<br />
+        • Real-time IoT Projects using ESP32 & NodeMCU<br />
+        • ML with Python, NumPy, Pandas, Matplotlib, Seaborn<br />
+        • Computer Vision using OpenCV, TensorFlow, Keras<br />
+        • Power BI & Excel for Data Insights
+        <br /><br />
+        Stay tuned for course launch announcements!
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-box">
+      <h2>Contact Us</h2>
+      <p>
+        ✉️ Email: sachimicromasters@gmail.com<br />
+        📞 Phone: +91-8985872909<br />
+        📍 Locations: Godavarikhani, Mancherial, Karimnagar – Telangana, India<br /><br />
+        Follow us on GitHub and stay connected for updates and registration info.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2025 Sachi µ Masters. All rights reserved. | Designed by Sadan Asampally
   </div>
 
 </body>

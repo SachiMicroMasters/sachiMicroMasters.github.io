@@ -1,103 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Sachi µ Masters</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            color: #222;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sachi µ Masters</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: #222;
+    }
 
-        header {
-            background-color: #004466;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #000;
+      color: white;
+      padding: 10px 30px;
+      flex-wrap: wrap;
+    }
 
-        header img {
-            max-width: 180px;
-            margin-bottom: 10px;
-        }
+    .logo {
+      max-height: 80px;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
+    .info {
+      text-align: right;
+    }
 
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            text-align: center;
-        }
+    .info h1 {
+      font-size: 1.8em;
+      margin: 0;
+      color: #ffd700;
+    }
 
-        h2 {
-            font-size: 1.8em;
-            color: #004466;
-            margin-bottom: 10px;
-        }
+    .info h2 {
+      font-size: 1.1em;
+      font-weight: normal;
+      margin: 5px 0;
+    }
 
-        .contact {
-            font-size: 1.1em;
-            color: #444;
-            margin-bottom: 50px;
-        }
+    .info p {
+      margin: 2px 0;
+      font-size: 0.95em;
+    }
 
-        .coming {
-            font-size: 2em;
-            color: #000;
-            animation: blink 1.5s infinite;
-        }
+    .main {
+      height: calc(100vh - 100px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
+    .scrolling-text {
+      font-size: 2em;
+      font-weight: bold;
+      color: #ffd700; /* gold */
+      overflow: hidden;
+      white-space: nowrap;
+      animation: scroll 10s linear infinite;
+      max-width: 100%;
+    }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2em;
-            }
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
 
-            h2 {
-                font-size: 1.4em;
-            }
-
-            .coming {
-                font-size: 1.5em;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .info {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .top-bar {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-      
-        <img src="Logo.jpeg" alt="Logo" />
+  <div class="top-bar">
+    <div>
+      <img src="Logo.jpeg" alt="Sachi µ Masters Logo" class="logo" />
+    </div>
+    <div class="info">
+      <h1>Sachi µ Masters</h1>
+      <h2>Embedded Systems & Machine Learning</h2>
+      <p>📧 sachimicromasters@gmail.com</p>
+      <p>📞 +91-8985872909</p>
+    </div>
+  </div>
 
-        <h1>Sachi µ Masters</h1>
-    </header>
-
-    <main>
-        <h2>Embedded Systems & Machine Learning</h2>
-        <div class="contact">
-            📧 sachimicromasters@gmail.com<br>
-            📞 +91-8985872909
-        </div>
-        <div class="coming">Coming shortly</div>
-    </main>
+  <div class="main">
+    <div class="scrolling-text">🚀 Coming Soon... Stay Tuned! 🚀</div>
+  </div>
 
 </body>
 </html>
